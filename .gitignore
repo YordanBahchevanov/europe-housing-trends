@@ -1,0 +1,24 @@
+# Python / Poetry
+__pycache__/
+*.py[cod]
+*.egg-info/
+.dist/
+build/
+.scratch/
+
+# Poetry venv in-project
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data & artifacts (keep raw/external out of git; commit tiny samples if needed)
+data/raw/
+data/external/
+data/interim/
+data/processed/
+models/
+reports/figures/
+
+# VS Code
+.vscode/
