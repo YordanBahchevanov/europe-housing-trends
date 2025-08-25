@@ -1,0 +1,19 @@
+name: europe-housing-trends
+channels: [conda-forge, defaults]
+dependencies:
+  - python=3.12
+  - pandas
+  - numpy
+  - pyarrow
+  - matplotlib
+  - statsmodels
+  - jupyterlab
+  - ipykernel
+  # dev (optional)
+  - black
+  - isort
+  - flake8
+  - pre-commit
+  - pytest
+  - pytest-cov
+ - plotly
