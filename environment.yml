@@ -16,4 +16,4 @@ dependencies:
   - pre-commit
   - pytest
   - pytest-cov
- - plotly
+  - plotly
