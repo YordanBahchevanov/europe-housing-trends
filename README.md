@@ -67,10 +67,10 @@ europe-housing-trends/
 ## How to Reproduce
 
 1. Clone this repo:
-   ```
-   git clone https://github.com/YordanBahchevanov/europe-housing-trends.git
-   cd europe-housing-trends
-   ```
+  ```
+  git clone https://github.com/YordanBahchevanov/europe-housing-trends.git
+  cd europe-housing-trends
+  ```
 2. Create and activate the environment:
   ```
   conda env create -f environment.yml
@@ -86,20 +86,11 @@ europe-housing-trends/
 
 ## Analysis Notebooks
 
-01_data_preparation.ipynb
- – Clean and merge Eurostat CSVs
-
-02_exploratory_analysis.ipynb
- – Europe-wide and Bulgaria-specific exploration
-
-03_correlation_analysis.ipynb
- – Correlations between HPI, earnings, GDP, inflation, unemployment
-
-04_affordability_analysis.ipynb
- – Affordability ratio, Bulgaria vs EU, clustering
-
-05_conclusion_and_report.ipynb
- – Final conclusions and policy implications
+- [01_data_preparation.ipynb](https://github.com/YordanBahchevanov/europe-housing-trends/blob/main/notebooks/01_data_preparation.ipynb) — Clean and merge Eurostat CSVs  
+- [02_exploratory_analysis.ipynb](https://github.com/YordanBahchevanov/europe-housing-trends/blob/main/notebooks/02_exploratory_analysis.ipynb) — Europe-wide and Bulgaria-specific exploration  
+- [03_correlation_analysis.ipynb](https://github.com/YordanBahchevanov/europe-housing-trends/blob/main/notebooks/03_correlation_analysis.ipynb) — Correlations between HPI, earnings, GDP, inflation, unemployment  
+- [04_affordability_analysis.ipynb](https://github.com/YordanBahchevanov/europe-housing-trends/blob/main/notebooks/04_affordability_analysis.ipynb) — Affordability ratio, Bulgaria vs EU, clustering  
+- [05_conclusion_and_report.ipynb](https://github.com/YordanBahchevanov/europe-housing-trends/blob/main/notebooks/05_conclusion_and_report.ipynb) — Final conclusions and policy implications
 
 --
 
