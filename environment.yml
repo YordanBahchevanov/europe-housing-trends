@@ -6,6 +6,7 @@ dependencies:
   - numpy
   - pyarrow
   - matplotlib
+  - scikit-learn
   - statsmodels
   - jupyterlab
   - ipykernel
