@@ -97,6 +97,24 @@ europe-housing-trends/
 
 --
 
+## Testing
+
+This project uses **pytest** for unit testing.  
+Tests cover both the ingestion pipeline (`scripts/ingest_eurostat_csvs.py`) and analysis helper functions from the notebooks.
+
+To run all tests:
+
+```bash
+pytest -q
+```
+
+To run specific test file:
+
+```bash
+pytest tests/test_ingest_unit.py -v
+```
+--
+
 ## Key Results (2015–2024)
 
 - Europe (EU pooled):
