@@ -19,23 +19,8 @@ def read_eurostat_clean_csv(
 
     Assumes standard columns like:
       DATAFLOW, LAST UPDATE, freq, <dims...>, geo, TIME_PERIOD, OBS_VALUE, [OBS_FLAG, CONF_STATUS]
-
-    Steps:
-      1) Read CSV (comma-delimited).
-      2) Lower-case column names; rename geo→country, rename TIME_PERIOD→year, OBS_VALUE→value.
-      3) Apply exact-match filters for provided dimension values (e.g., {'freq': 'Annual', 'sex': 'Total'}).
-      4) Cast 'year' to Int64 and 'value' to float.
-      5) Keep a uniform subset of columns.
-
-    Args:
-        path: Path to CSV file.
-        dim_filters: Mapping of {column_name: exact_value} to keep, applied after reading.
-        keep_cols: Final columns to keep; default is ['country','year','value','unit'] if present.
-
-    Returns:
-        pd.DataFrame with columns like ['country','year','value','unit'].
     """
-    df = pd.read_csv(path, low_memory=False)
+    df = pd.read_csv(path, sep=None, engine="python")
 
     df.columns = [c.strip().lower() for c in df.columns]
 
@@ -62,11 +47,18 @@ def read_eurostat_clean_csv(
     cols = keep_cols if keep_cols is not None else default_keep
     cols = [c for c in cols if c in df.columns]
 
+    if not cols:
+        raise ValueError(
+            f"No requested columns found in {path.name}. "
+            f"Available: {list(df.columns)}; requested keep: {keep_cols or default_keep}"
+        )
+
     for c in ("country", "unit"):
         if c in df.columns:
             df[c] = df[c].astype(str).str.strip()
 
     return df[cols].copy()
+
 
 
 def tidy_save(df: pd.DataFrame, name: str) -> None:

@@ -36,6 +36,9 @@ Tidy, filtered versions are saved under `data/processed/`.
 ```
 europe-housing-trends/
 │
+├── configs/
+│   └── project.yaml     # Central configuration (paths, years, focus country)
+│
 ├── data/
 │   ├── raw/          # Original Eurostat CSVs
 │   └── processed/    # Cleaned & merged CSVs
