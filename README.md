@@ -33,25 +33,32 @@ Tidy, filtered versions are saved under `data/processed/`.
 
 ## Repository Structure
 
-```europe-housing-trends/
+```
+europe-housing-trends/
 │
 ├── data/
-│ ├── raw/ # Original Eurostat CSVs
-│ └── processed/ # Cleaned & merged CSVs
+│   ├── raw/          # Original Eurostat CSVs
+│   └── processed/    # Cleaned & merged CSVs
 │
-├── docs/
-│ ├── 01_research_question.md
-│ └── 02_data_sources.md
+├── docs/             # Research documentation
+│   ├── 01_research_question.md
+│   ├── 02_data_sources.md
+│   └── 03_conclusion.md
 │
-├── notebooks/
-│ └── 01_exploration.ipynb
-│
-├── scripts/
-│ └── ingest_eurostat_csvs.py
+├── notebooks/        # Jupyter notebooks (analysis steps)
+│   ├── 01_data_preparation.ipynb
+│   ├── 02_exploratory_analysis.ipynb
+│   ├── 03_correlation_analysis.ipynb
+│   ├── 04_affordability_analysis.ipynb
+│   └── 05_conclusion_and_report.ipynb
 │
 ├── reports/
-│ └── figures/ # Plots generated for report
+│   └── figures/      # Plots generated for report
 │
+├── scripts/          # Helper scripts
+│   └── ingest_eurostat_csvs.py
+│
+├── environment.yml   # Reproducible conda environment
 └── README.md
 ```
 
@@ -59,9 +66,52 @@ Tidy, filtered versions are saved under `data/processed/`.
 
 ## How to Reproduce
 
-1. Clone this repo and set up environment:
-   ```bash
+1. Clone this repo:
+   ```
    git clone https://github.com/YordanBahchevanov/europe-housing-trends.git
    cd europe-housing-trends
-   conda create -n europe-housing-trends python=3.12
-   conda activate europe-housing-trends
+   ```
+2. Create and activate the environment:
+  ```
+  conda env create -f environment.yml
+  conda activate europe-housing-trends
+  ```
+3. Run the data ingestion script:
+  ```
+  python scripts/ingest_eurostat_csvs.py
+  ```
+4. Open and run notebooks step by step.
+
+--
+
+## Analysis Notebooks
+
+01_data_preparation.ipynb
+ – Clean and merge Eurostat CSVs
+
+02_exploratory_analysis.ipynb
+ – Europe-wide and Bulgaria-specific exploration
+
+03_correlation_analysis.ipynb
+ – Correlations between HPI, earnings, GDP, inflation, unemployment
+
+04_affordability_analysis.ipynb
+ – Affordability ratio, Bulgaria vs EU, clustering
+
+05_conclusion_and_report.ipynb
+ – Final conclusions and policy implications
+
+--
+
+## Key Results (2015–2024)
+
+- Europe (EU pooled):
+  - HPI correlates moderately with GDP growth and inflation.
+  - Weak links with earnings; negative with unemployment.
+- Bulgaria:
+  - HPI is tightly coupled with net and real earnings.
+  - Stronger fundamentals-driven pattern than the EU average.
+  - Affordability improved (ratio index –11%), while EU average worsened (+12%).
+- Extremes in 2024:
+  - Lowest affordability index: Romania (64.1, ~27.9% lower than Bulgaria).
+  - Highest affordability index: Hungary (161.7, ~81.7% higher than Bulgaria).
