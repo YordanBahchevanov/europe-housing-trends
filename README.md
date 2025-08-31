@@ -9,11 +9,12 @@ This project explores the relationship between **house price dynamics** and **ec
 **Are house price increases in Bulgaria more strongly decoupled from net earnings than in the rest of Europe?**
 
 ### Hypotheses
+
 - **H0 (null):**  
-  The relationship between HPI and net earnings in Bulgaria is similar to the European average.
+  Bulgaria’s housing affordability (HPI-to-earnings ratio) has evolved similarly to the European average.
 
 - **H1 (alternative):**  
-  Bulgaria’s HPI growth is less explained by net earnings compared to the European average, suggesting reduced affordability and stronger speculative/inflationary dynamics.
+  Bulgaria’s housing affordability has diverged from the European average, showing a different trajectory compared to most EU countries.
 
 ---
 
@@ -79,11 +80,14 @@ europe-housing-trends/
   conda env create -f environment.yml
   conda activate europe-housing-trends
   ```
-3. Run the data ingestion script:
+3. Download the datasets from Eurostat and save them as CSVs in data/raw/ with exact filenames:
+  - Create the folder if needed.
+  - For details about the datasets, look [docs/02_data_sources.md](https://github.com/YordanBahchevanov/europe-housing-trends/blob/main/docs/02_data_sources.md)
+4. Run the data ingestion script:
   ```
   python scripts/ingest_eurostat_csvs.py
   ```
-4. Open and run notebooks step by step.
+5. Open and run notebooks step by step.
 
 --
 

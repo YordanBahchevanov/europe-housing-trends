@@ -30,7 +30,9 @@
 
 ## Research Question
 **Is Bulgaria’s HPI decoupled from earnings?**  
-**Answer: No.** Over 2015–2024, Bulgaria shows **very strong coupling** between HPI and both net and real earnings, alongside strong links to unemployment, GDP growth, and inflation. In addition, Bulgaria’s affordability ratio index **improved** relative to its 2015 base, while the EU average deteriorated.
+**Answer: No.** Over 2015–2024, Bulgaria shows **very strong coupling** between HPI and both net and real earnings. But when translated into affordability, Bulgaria diverges from the EU: its affordability ratio **improved**, while the EU average deteriorated.  
+
+Thus, we **reject H0** and accept H1: Bulgaria’s affordability has diverged positively from Europe.
 
 ## Policy & Market Implications (hypotheses)
 - **Affordability & income:** Continued wage growth appears to support the housing market. Monitor whether wage gains keep pace with HPI beyond 2024.
